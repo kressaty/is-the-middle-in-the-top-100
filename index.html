@@ -4,12 +4,13 @@
 		<script>
 			var i = 1;
 			$.get('https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml', function (data) {
-			    $(data).find("entry").each(function () { // or "item" or whatever suits your feed
+			    $(data).find("entry").each(function () { 
 			        var el = $(this);
 					if(el.find("title").text() === 'The Middle - Jimmy Eat World') {
-						jQuery('#answer').text('Yes, it\'s #'+i);
+						$('#answer').text('Yes, it\'s #'+i);
 					}
 			        i++;
+					// SHAFFY YOU HAVE BETTER THINGS TO BE DOING
 			    });
 			});
 		</script>
