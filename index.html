@@ -7,9 +7,9 @@
 			    $(data).find("entry").each(function () { // or "item" or whatever suits your feed
 			        var el = $(this);
 					if(el.find("title").text() === 'The Middle - Jimmy Eat World') {
-						jQuery('#answer').text('Yes');
+						jQuery('#answer').text('Yes, it\'s #'+i);
 					}
-			        
+			        i++;
 			    });
 			});
 		</script>
