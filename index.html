@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+		<script>
+			var i = 1;
+			$.get('https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml', function (data) {
+			    $(data).find("entry").each(function () { // or "item" or whatever suits your feed
+			        var el = $(this);
+					if(el.find("title").text() === 'The Middle - Jimmy Eat World') {
+						jQuery('#answer').text('Yes');
+					}
+			        
+			    });
+			});
+		</script>
+	</head>
+	<body>
+		<div id="answer" style="font-size: 100px; text-align: center; width: 100%; margin-top: 200px;">
+			No
+		</div>
+	</body>
+</html>
